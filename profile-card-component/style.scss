@@ -1,0 +1,114 @@
+$primary: hsl(185, 75%, 39%);
+$primary-dark-blue: hsl(229, 23%, 23%);
+$primary-light-blue: hsl(227, 10%, 46%);
+
+$gray: hsl(0, 0%, 59%);
+
+$font-size: 18px;
+$font-family: 'Kumbh Sans', sans-serif;
+
+$bg-top: url('../profile-card-component/images/bg-pattern-top.svg');
+$bg-bottom: url('../profile-card-component/images/bg-pattern-bottom.svg');
+
+$bg-top-position: -250px -540px;
+$bg-bottom-position: 700px 410px;
+
+$bg-top-position-sm: -800px -500px;
+$bg-bottom-position-sm: 200px 410px;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: {
+    family: $font-family;
+    size: 1rem;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  background-color: $primary;
+  background-image: $bg-top, $bg-bottom;
+  background-position: $bg-top-position, $bg-bottom-position;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 375px) {
+  main {
+    background-position: $bg-top-position-sm, $bg-bottom-position-sm;
+  }
+}
+
+.card {
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 10px 50px #555;
+  text-align: center;
+}
+
+.card-cover {
+  border-radius: 15px 15px 0 0;
+}
+
+.card-img {
+  border-radius: 50%;
+  border: 5px solid #fff;
+  position: relative;
+  translate: 50%, -50%;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-name {
+  color: $primary-dark-blue;
+  font-size: $font-size;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+  span {
+    color: $primary-light-blue;
+    font-weight: 400;
+  }
+}
+
+.card-bio {
+  color: $primary-light-blue;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $gray;
+}
+
+.card-status {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+
+  span {
+    color: $primary-dark-blue;
+    font-size: $font-size;
+    font-weight: 700;
+  }
+
+  p {
+    color: $primary-light-blue;
+    font-size: 14px;
+    margin-top: 0.25rem;
+    letter-spacing: 0.1em;
+  }
+}
